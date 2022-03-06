@@ -7,7 +7,7 @@ From the security perspective, Modlishka can be currently used to:
 -  Automatically poison HTTP 301 browsers cache and permanently hijack non-TLS URLS.
 -  Diagnose and hijack browser-based applications HTTP traffic from the "Client Domain Hooking" attack perspective.
 -  Wrap legacy websites with TLS layer, confuse crawler bots and automated scanners, etc.
--  TBC
+
 
 Modlishka was written as an attempt overcome standard reverse proxy limitations and as a personal challenge to see what is possible with sufficient motivation and a bit of extra research time. 
 The achieved results appeared to be very interesting and the tool was initially released and later updated with aim to:
@@ -53,19 +53,21 @@ Modlishka in action against an example two factor authentication scheme (SMS bas
 
 [https://vimeo.com/308709275](https://vimeo.com/308709275)
 
-
 Installation
 ------------
 
 Latest source code version can be fetched from [here](https://github.com/drk1wi/modlishka/zipball/master) (zip) or [here](https://github.com/drk1wi/modlishka/tarball/master) (tar).
 
-Fetch the code with _'go get'_ :
 
-    $ go get -u github.com/drk1wi/Modlishka
+
+Fetch the code with _'go install'_ :
+
+    $ go install github.com/drk1wi/Modlishka
 
 Compile the binary and you are ready to go:
 
-    $ cd $GOPATH/src/github.com/drk1wi/Modlishka/
+    $ git clone https://github.com/drk1wi/Modlishka.git
+    $ cd Modlishka
     $ make
     
     
@@ -95,7 +97,7 @@ Compile the binary and you are ready to go:
           URL to view captured credentials and settings. (default "SayHello2Modlishka")
           
       -credParams string
-          	Credential regexp with matching groups. e.g. : baase64(username_regex),baase64(password_regex)
+          	Credential regexp with matching groups. e.g. : base64(username_regex),base64(password_regex)
 
       -debug
         	Print debug information
@@ -153,6 +155,7 @@ Compile the binary and you are ready to go:
       
       -trackingParam string
         	Name of the HTTP parameter used to track the client (default "id")
+
 
 
 
